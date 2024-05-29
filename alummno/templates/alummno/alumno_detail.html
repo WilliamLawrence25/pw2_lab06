@@ -1,0 +1,10 @@
+<!-- mi_aplicacion/templates/mi_aplicacion/alumno_detail.html -->
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>{{ object.name }} {{ object.lastname }}</h2>
+  <p>Edad: {{ object.age }}</p>
+  <a href="{% url 'alumno-edit' object.pk %}">Editar</a>
+  <a href="{% url 'alumno-delete' object.pk %}">Eliminar</a>
+  <a href="{% url 'alumno-list' %}">Volver a la lista</a>
+{% endblock %}
