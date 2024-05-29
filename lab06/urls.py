@@ -21,5 +21,5 @@ from alummno import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("alummno.urls")),
-    path('hello/', views.index, name="index")
+
 ]

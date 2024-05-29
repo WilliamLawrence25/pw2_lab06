@@ -1,0 +1,15 @@
+<!-- mi_aplicacion/templates/mi_aplicacion/curso_list.html -->
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Lista de Curso</h2>
+  <a href="{% url 'curso-create' %}">Nuevo Curso</a>
+  <ul>
+    {% for curso in object_list %}
+      <li>
+        <a href="{% url 'curso-detail' curso.pk %}">{{ curso.name }} {{ curso.teacher_name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

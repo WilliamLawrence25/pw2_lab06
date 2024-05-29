@@ -1,0 +1,11 @@
+<!-- mi_aplicacion/templates/mi_aplicacion/alumno_confirm_delete.html -->
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>¿Estás seguro que deseas eliminar a {{ object.name }} {{ object.lastname }}?</h2>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Sí, eliminar</button>
+  </form>
+  <a href="{% url 'alumno-list' %}">Cancelar</a>
+{% endblock %}

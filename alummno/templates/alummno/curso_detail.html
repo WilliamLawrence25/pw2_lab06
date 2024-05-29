@@ -1,0 +1,10 @@
+<!-- mi_aplicacion/templates/mi_aplicacion/curso_detail.html -->
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Nombre: {{ object.name }} </h2>
+  <h2>Nombre de profesor: {{ object.teacher_name }}</h2>
+  <a href="{% url 'curso-edit' object.pk %}">Editar</a>
+  <a href="{% url 'curso-delete' object.pk %}">Eliminar</a>
+  <a href="{% url 'curso-list' %}">Volver a la lista</a>
+{% endblock %}

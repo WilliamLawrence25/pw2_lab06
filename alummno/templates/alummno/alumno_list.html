@@ -1,0 +1,15 @@
+<!-- mi_aplicacion/templates/mi_aplicacion/alumno_list.html -->
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Lista de Alumnos</h2>
+  <a href="{% url 'alumno-create' %}">Nuevo Alumno</a>
+  <ul>
+    {% for alumno in object_list %}
+      <li>
+        <a href="{% url 'alumno-detail' alumno.pk %}">{{ alumno.name }} {{ alumno.lastname }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
